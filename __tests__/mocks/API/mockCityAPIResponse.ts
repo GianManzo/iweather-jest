@@ -1,4 +1,4 @@
-import { CityAPIResponse } from "./../../src/services/getCityByNameService";
+import { CityAPIResponse } from "../../../src/services/getCityByNameService";
 export const mockCityAPIResponse: CityAPIResponse = {
   id: "1",
   name: "São Paulo",
