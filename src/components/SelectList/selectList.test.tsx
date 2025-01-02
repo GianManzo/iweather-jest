@@ -21,10 +21,16 @@ describe("Component: SelectList", () => {
     const onPress = jest.fn();
 
     render(<SelectList data={data} onChange={() => {}} onPress={onPress} />);
-
-    const selectedCity = screen.getByText("São Paulo");
+    const selectedCity = screen.getByText(/paulo/i);
     fireEvent.press(selectedCity);
 
     expect(onPress).toHaveBeenCalledWith(data[0]);
+  });
+
+  it("not should be show options when data props is empty", () => {
+    render(<SelectList data={[]} onChange={() => {}} onPress={() => {}} />);
+    const options = screen.queryByTestId("options");
+
+    expect(options.children).toHaveLength(0);
   });
 });
