@@ -5,7 +5,11 @@
   "transformIgnorePatterns": [
     "node_modules/(?!((jest-)?react-native|@react-native(-community)?|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@sentry/react-native|native-base|react-native-svg))"
   ],
-  "setupFiles": ["./jest.setup.js", "./__tests__/mocks/libs/async-storage.js"],
+  "setupFiles": [
+    "./jest.setup.js",
+    "./__tests__/mocks/libs/async-storage.js",
+    "./__tests__/mocks/libs/reaact-native-safe-area-context.js"
+  ],
   "testEnvironment": "jsdom",
   "transform": {
     "^.+\\.jsx?$": "babel-jest",
